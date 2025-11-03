@@ -1,0 +1,95 @@
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.searchInput {
+  background: var(--neutral-2);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 32px;
+  width: 344px;
+  padding: 0px 32px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-1);
+  box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+  color: var(--black-45);
+}
+
+.searchInput:focus {
+  outline: none;
+  background: var(--neutral-2);
+  border: 1px solid var(--color-primary-ublue-06);
+}
+
+.searchInput:hover {
+  background: var(--neutral-3);
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-1);
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  color: var(--neutral-8);
+  pointer-events: none;
+}
+
+.suggestionsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 2px;
+  padding: var(--space-1) 0;
+}
+
+.suggestionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-3);
+  color: var(--text-2);
+  font-family: "UI Sans_v7", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+}
+
+.suggestionText {
+  flex: 1;
+}
+
+.suggestionShortname {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.suggestionItem:hover {
+  background: var(--neutral-9);
+}
+
+.suggestionItemSelected {
+  border: 1px solid var(--color-primary-ublue-06);
+}

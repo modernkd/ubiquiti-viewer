@@ -1,0 +1,165 @@
+.filterContainer {
+  position: relative;
+  display: inline-block;
+  background: none;
+}
+
+.filterButton {
+  display: inline-flex;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 40px;
+  height: 32px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 4px;
+  background: white;
+}
+
+.filterButton:hover {
+  background-color: var(--neutral-1);
+}
+
+.filterButton.active {
+  background-color: var(--neutral-1);
+}
+
+.filterButton.active .filterIcon path {
+  fill: var(--color-primary-ublue-06);
+  fill-opacity: 1;
+}
+
+.filterButton.active .filterIcon {
+  color: var(--color-primary-ublue-06);
+  border-color: var(--color-primary-ublue-06);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--Neutral-web-unifi-color-neutral-00, white);
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  z-index: 1000;
+  min-width: 200px;
+  max-height: 40vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  font-family: "UI Sans_v7", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.checkboxLabel:hover {
+  outline: 1px solid var(--color-primary-ublue-06);
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkboxCustom {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  border: 1px solid var(--neutral-6);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checkbox:focus + .checkboxCustom {
+  border-color: var(--color-primary-ublue-06);
+}
+
+.checkbox:checked + .checkboxCustom {
+  background-color: var(--color-primary-ublue-06);
+  border-color: var(--color-primary-ublue-06);
+  outline: 1px #006fff solid;
+  outline-offset: -1px;
+}
+
+.checkbox:checked + .checkboxCustom::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxText {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Active state styling for checkboxes */
+.checkboxLabel:has(.checkbox:checked) .checkboxText {
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 400;
+}
+
+.filterTitle {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-family: "UI Sans_v7", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resetButton {
+  color: var(--red-2);
+  font-size: 14px;
+  font-family: "UI Sans_v7", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.resetButton:hover {
+  text-decoration: underline;
+}
