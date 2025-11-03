@@ -24,12 +24,27 @@
 .header span {
   display: flex;
   flex-direction: row;
-  color: var(--Text-web-unifi-text-3, #808893);
+  color: var(--Text-web-unifi-text-3, var(--text-3));
 
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+}
+
+.authorLink {
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.authorLink:hover {
+  color: var(--blue-1);
+}
+
+.authorLink:focus {
+  outline: 1px solid var(--blue-1);
+  border-radius: 2px;
 }
 
 .logoButton {
@@ -151,33 +166,33 @@
     flex: 1;
     min-width: 140px;
   }
-/* Skip links for accessibility */
-.skipLink {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 1000;
-  border-radius: 4px;
-  font-size: 14px;
-}
+  /* Skip links for accessibility */
+  .skipLink {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+    font-size: 14px;
+  }
 
-.skipLink:focus {
-  top: 6px;
-}
-/* Screen reader only content */
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+  .skipLink:focus {
+    top: 6px;
+  }
+  /* Screen reader only content */
+  .srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 }

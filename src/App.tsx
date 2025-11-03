@@ -62,7 +62,14 @@ const App = () => {
           </button>
           <h1 className={styles.title}>Devices</h1>
         </span>
-        <span>Kevin Davis</span>
+        <a
+          href="https://github.com/modernkd/ubiquiti-viewer"
+          className={styles.authorLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kevin Davis
+        </a>
       </header>
       <div className={styles.container}>
         <div className={styles.content}>
