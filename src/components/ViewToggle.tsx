@@ -4,9 +4,6 @@ import { ListViewIcon } from "./icons/ListViewIcon";
 import { GridViewIcon } from "./icons/GridViewIcon";
 import styles from "./ViewToggle.module.css";
 
-/**
- * Props for the ViewToggle component.
- */
 interface ViewToggleProps {
   /**
    * Current active view mode.
@@ -18,28 +15,7 @@ interface ViewToggleProps {
   onViewModeChange: (mode: ViewMode) => void;
 }
 
-/**
- * ViewToggle component that provides buttons to switch between list and grid view modes.
- *
- * This component renders a toggle interface with:
- * - List view button with List icon from Lucide
- * - Grid view button with custom SVG grid icon
- * - Active state styling for current view mode
- * - Proper accessibility with ARIA labels and titles
- * - Responsive button layout
- *
- * @param props - The component props
- * @param props.viewMode - Current view mode selection
- * @param props.onViewModeChange - Function called when mode changes
- *
- * @example
- * ```tsx
- * <ViewToggle
- *   viewMode="grid"
- *   onViewModeChange={(mode) => setViewMode(mode)}
- * />
- * ```
- */
+// ViewToggle component that provides buttons to switch between list and grid view modes.
 export const ViewToggle: React.FC<ViewToggleProps> = ({
   viewMode,
   onViewModeChange,
