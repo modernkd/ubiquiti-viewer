@@ -1,0 +1,26 @@
+[
+  {
+    "name": "JavaScript",
+    "path": "dist/assets/*.js",
+    "limit": "500 kB",
+    "gzip": true
+  },
+  {
+    "name": "CSS",
+    "path": "dist/assets/*.css",
+    "limit": "50 kB",
+    "gzip": true
+  },
+  {
+    "name": "Vendor chunk",
+    "path": "dist/assets/vendor-*.js",
+    "limit": "300 kB",
+    "gzip": true
+  },
+  {
+    "name": "Table chunk",
+    "path": "dist/assets/table-*.js",
+    "limit": "100 kB",
+    "gzip": true
+  }
+]
