@@ -150,6 +150,7 @@
 
   .toolbarLeft {
     max-width: none;
+    flex-wrap: wrap;
   }
 
   .toolbarRight {
