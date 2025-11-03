@@ -72,6 +72,12 @@ export const DeviceOpen: React.FC<DeviceOpenProps> = ({
     }
   }, []);
 
+  // Update document title with device name
+  useEffect(() => {
+    const deviceName = device.product?.name || "Device";
+    document.title = `Kevin Davis | Ubiquiti Viewer - ${deviceName}`;
+  }, [device]);
+
   // Find current device index in filtered devices
   const currentIndex =
     filteredDevices?.findIndex((d) => d.id === device.id) ?? -1;

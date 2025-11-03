@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDevices } from "./hooks/useDevices";
 import { useDeviceFilters } from "./hooks/useDeviceFilters";
 import { DeviceToolbar } from "./components/DeviceToolbar";
@@ -7,7 +7,7 @@ import { LoadingSpinner } from "./components/LoadingSpinner";
 import { ErrorMessage } from "./components/ErrorMessage";
 import { DeviceDetailRoute } from "./components/devicedetails/DeviceDetailRoute";
 import { type ViewMode, type Device } from "./types/device";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import styles from "./App.module.css";
 import { UbiquitiLogo } from "./components/icons/UbiquitiLogo";
 
@@ -18,6 +18,7 @@ const App = () => {
   const { devices, loading, error, refetch } = useDevices();
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const {
     query,
@@ -26,6 +27,11 @@ const App = () => {
     setQuery,
     setProductLineFilter,
   } = useDeviceFilters(devices);
+
+  useEffect(() => {
+    document.title =
+      "Kevin Davis | Ubiquiti Viewer" + (query.trim() ? ` - ${query}` : "");
+  }, [query, location]);
 
   // Helper function to build search params string
   const buildSearchParams = () => {
@@ -56,7 +62,7 @@ const App = () => {
           </button>
           <h1 className={styles.title}>Devices</h1>
         </span>
-        <span>kd davis</span>
+        <span>Kevin Davis</span>
       </header>
       <div className={styles.container}>
         <div className={styles.content}>
