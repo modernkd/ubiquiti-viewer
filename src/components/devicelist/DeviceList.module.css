@@ -1,0 +1,238 @@
+.deviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filtersContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-1) 0;
+}
+
+.deviceListItem {
+  background: var(--neutral-0);
+  border-bottom: 1px solid var(--neutral-3);
+  padding: 6px var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-height: 32px;
+  box-sizing: border-box;
+}
+
+.deviceListItem:hover {
+  background: var(--neutral-1);
+}
+
+.deviceListIcon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--neutral-2);
+  flex-shrink: 0;
+}
+
+.deviceListInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.deviceListName {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--text-1-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deviceListModel {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+  color: var(--text-3);
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: var(--black-45);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: background 0.12s ease, color 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-1);
+}
+
+.expandButton:hover {
+  background: var(--neutral-2);
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.expandIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.18s ease;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Table Styles */
+.deviceTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.headerCell {
+  padding: 12px 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.tableRow {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.tableRow:hover {
+  background: var(--neutral-9);
+}
+
+.tableRow:focus-visible {
+  outline: 2px solid var(--blue-3);
+  outline-offset: -2px;
+}
+
+.tableCell {
+  padding: 12px var(--space-2);
+  border-bottom: 1px solid var(--neutral-10);
+
+  vertical-align: middle;
+  text-align: left;
+}
+
+.virtualTableRow {
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.virtualTableRow:hover {
+  background: var(--neutral-11);
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: border-color 0.12s ease;
+}
+
+.clickableRow:active {
+  border: 2px solid var(--blue-3);
+}
+
+.sortButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  transition: color 0.12s ease;
+}
+
+.sortButton:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.sortIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.deviceIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Virtual scrolling styles */
+.virtualList {
+  border-top: 1px solid var(--neutral-10);
+  border-bottom: 1px solid var(--neutral-10);
+  overflow: auto;
+}
+
+.virtualList table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.virtualList thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+}
+
+.virtualList tbody tr {
+  background: white;
+}
+
+.virtualList tbody tr:hover {
+  background: #f5f5f5;
+}
+
+@media (max-width: 720px) {
+  .deviceListItem {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .deviceListIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .deviceListName {
+    font-size: 15px;
+  }
+
+  .deviceTable th,
+  .deviceTable td {
+    padding: var(--space-1) 12px;
+    font-size: 13px;
+  }
+
+  .deviceIcon {
+    width: 20px;
+    height: 20px;
+  }
+}

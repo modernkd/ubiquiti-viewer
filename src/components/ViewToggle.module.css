@@ -1,0 +1,40 @@
+.viewToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--neutral-8);
+  border: none;
+  background: none;
+}
+
+.toggleButton:focus {
+  border: 1px solid var(--color-primary-ublue-06);
+}
+
+.toggleButton.active {
+  background: var(--neutral-1);
+}
+
+.toggleButton.active .toggleIcon svg {
+  color: var(--color-primary-ublue-06);
+}
+
+.toggleButton:hover {
+  background: var(--neutral-9);
+}
+
+.toggleIcon {
+  width: 18px;
+  height: 18px;
+}
