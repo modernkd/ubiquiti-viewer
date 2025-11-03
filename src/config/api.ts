@@ -22,6 +22,6 @@
  * ```
  */
 export const API_CONFIG = {
-  BASE_URL: "https://static.ui.com/fingerprint/ui/public.json",
+  BASE_URL: import.meta.env.VITE_API_URL,
   CACHE_DURATION: 5 * 60 * 1000, // 5 minutes
 } as const;
