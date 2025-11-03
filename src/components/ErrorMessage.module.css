@@ -1,0 +1,50 @@
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.errorIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--red-1);
+}
+
+.errorTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-6);
+  margin: 0;
+}
+
+.errorText {
+  color: var(--text-4);
+  font-size: 14px;
+  margin: 0;
+  max-width: 400px;
+}
+
+.retryButton {
+  padding: var(--space-1) var(--space-2);
+  background: var(--blue-1);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.retryButton:hover {
+  background: var(--blue-2);
+}
+
+.retryButton:focus {
+  outline: 2px solid var(--blue-1);
+  outline-offset: 2px;
+}
