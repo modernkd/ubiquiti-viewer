@@ -102,7 +102,7 @@ const App = () => {
                         onOpen={(d: Device) => {
                           const params = buildSearchParams();
                           navigate(
-                            `/device/${encodeURIComponent(d.id)}${
+                            `/devices/${encodeURIComponent(d.id)}${
                               params ? `?${params}` : ""
                             }`
                           );
@@ -112,36 +112,7 @@ const App = () => {
                   }
                 />
 
-                <Route
-                  path="/device/:id"
-                  element={
-                    <DeviceDetailRoute
-                      devices={devices}
-                      filteredDevices={fullyFilteredDevices}
-                      loading={loading}
-                      className={styles.content}
-                      buildSearchParams={buildSearchParams}
-                      onNavigate={(deviceId, params) => {
-                        if (deviceId) {
-                          navigate(
-                            `/device/${encodeURIComponent(deviceId)}${
-                              params ? `?${params}` : ""
-                            }`
-                          );
-                        } else {
-                          navigate(`/?${params}`);
-                        }
-                      }}
-                      onRetry={(type) => {
-                        if (type === "notFound") {
-                          navigate(-1);
-                        } else {
-                          window.location.reload();
-                        }
-                      }}
-                    />
-                  }
-                />
+                <Route path="/devices/:id" element={<DeviceDetailRoute />} />
               </Routes>
             </>
           )}

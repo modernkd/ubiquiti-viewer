@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { type Device } from "../../types/device";
 import {
   useReactTable,
@@ -49,7 +50,7 @@ export const DeviceList: React.FC<DeviceListProps> = ({ devices, onOpen }) => {
     {
       accessorKey: "product.name",
       header: "Name",
-      cell: ({ getValue }) => (
+      cell: ({ getValue, row }) => (
         <div
           style={{
             color: "var(--text-3-light)",
@@ -59,7 +60,12 @@ export const DeviceList: React.FC<DeviceListProps> = ({ devices, onOpen }) => {
             lineHeight: 20,
           }}
         >
-          {getValue() as string}
+          <Link
+            to={`/devices/${encodeURIComponent(row.original.id)}`}
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            {getValue() as string}
+          </Link>
         </div>
       ),
     },

@@ -179,6 +179,14 @@ Each device displays comprehensive information including:
 - **Optimized Re-renders**: Memoization and efficient state management
 - **Bundle Splitting**: Code-split chunks for faster initial load
 
+## Routing
+
+### Device Details URL
+
+The canonical URL format for device details pages is `/devices/:id`, where `:id` is the device ID.
+
+This URL supports direct navigation and page reloads. It loads the same product endpoint as the home route but filters to display the single device.
+
 ## API Integration
 
 The application integrates with Ubiquiti's public device catalog API:

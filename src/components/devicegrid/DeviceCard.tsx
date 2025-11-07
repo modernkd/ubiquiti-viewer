@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { type Device } from "../../types/device";
 import { DeviceIcon } from "../DeviceIcon";
 import styles from "./DeviceCard.module.css";
@@ -18,19 +19,10 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({
   selected = false,
 }) => {
   return (
-    <div
-      role="button"
-      tabIndex={0}
+    <Link
+      to={`/devices/${encodeURIComponent(device.id)}`}
       className={`${styles.deviceCard} ${selected ? styles.selected : ""}`}
       onClick={() => onOpen?.(device)}
-      onKeyDown={(e) => {
-        // Support keyboard activation (Enter / Space)
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onOpen?.(device);
-        }
-      }}
-      aria-pressed={selected}
     >
       <div className={styles.thumbBox}>
         <DeviceIcon
@@ -47,6 +39,6 @@ export const DeviceCard: React.FC<DeviceCardProps> = ({
         <h3 className={styles.deviceName}>{device.product.name}</h3>
         <p className={styles.deviceModel}>{device.product.abbrev}</p>
       </div>
-    </div>
+    </Link>
   );
 };
