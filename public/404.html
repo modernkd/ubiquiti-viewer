@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ubiquiti Viewer</title>
     <script>
-      // Redirect to index.html with the current path preserved for client-side routing
-      const path =
-        window.location.pathname +
-        window.location.search +
-        window.location.hash;
-      window.location.href = "/" + path;
+      // Redirect to root to let React Router handle client-side routing
+      window.location.replace("/");
     </script>
   </head>
   <body>

@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDevices } from "../../hooks/useDevices";
 import { LoadingSpinner } from "../LoadingSpinner";
 import { ErrorMessage } from "../ErrorMessage";
-import { DeviceDetails } from "./DeviceDetails";
+import { DeviceOpen } from "./DeviceOpen";
 
 /**
  * DeviceDetailRoute
@@ -12,6 +12,7 @@ import { DeviceDetails } from "./DeviceDetails";
  */
 export const DeviceDetailRoute: React.FC = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const routeId = params.id ? decodeURIComponent(params.id) : "";
   const { devices, loading, error, refetch } = useDevices();
 
@@ -19,6 +20,11 @@ export const DeviceDetailRoute: React.FC = () => {
     () => devices?.find((d) => String(d.id) === String(routeId)),
     [devices, routeId]
   );
+
+  // Handle close/back navigation
+  const handleClose = () => {
+    navigate("/");
+  };
 
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage message={error} onRetry={refetch} />;
@@ -29,5 +35,5 @@ export const DeviceDetailRoute: React.FC = () => {
     return <ErrorMessage message="Device not found" />;
   }
 
-  return <DeviceDetails device={device} />;
+  return <DeviceOpen device={device} onClose={handleClose} />;
 };
