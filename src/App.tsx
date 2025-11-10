@@ -44,7 +44,8 @@ const App = () => {
 
   // Handle logo click to reset filters and go home
   const handleLogoClick = () => {
-    navigate("/");
+    // Use window.location to force navigation and avoid React Router compatibility issues
+    window.location.href = "/";
     setQuery("");
     setProductLineFilter([]);
   };
